@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><h3>Freya's Place Pitbull Adoption in Coeur d'Alene</h3></title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+
+    body {
+        background-color: rgb(175, 10, 43);
+        
+    }
+    
+    h3{
+      text-align: center;
+      text-emphasis-color: rgb(44, 7, 74);  
+      padding: 10px;
+      background-color: blue;
+          }   
+    
+    h2{
+        color: black;
+        text-align: center;
+        
+    }
+
+    .container {
+      display:flex;
+      justify-content: center;
+    }
+
+    .content-container {
+      width: 25%;
+      margin: 0 25px;
+      }
+
+    .image-container {
+      display:block;
+      justify-content: flex;
+      margin: 0 20px;
+      width: 20%;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    #adoptionTable {
+      text-align: center;  
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+    <h3 class="text-center">Freya's Place Pitbull Adoption in Coeur d'Alene</h3>
+
+  <div class="container mt-5">
+    <div class="image-container">
+        
+        <img src="https://tse3.explicit.bing.net/th?id=OIP.u8FL4p28x88gS6jp4HSs6AHaG2&pid=Api&P=0&h=180" alt="pitbull 1"> 
+      <img src="https://tse3.mm.bing.net/th?id=OIP.DVAyMwMA1TamDHt2FqFTeQHaHa&pid=Api&P=0&h=180" alt="pitbull 2"> 
+    </div>
+
+    <div class="content-container">
+      <form id="adoptionForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter dog's name" required>
+        </div>
+        <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="text" class="form-control" id="age" placeholder="Enter dog's age" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Description:</label>
+          <textarea class="form-control" id="description" rows="3" placeholder="Enter dog's description" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="reason">Reason for Adoption:</label>
+          <input type="text" class="form-control" id="reason" placeholder="Enter reason for adoption" required>
+        </div>
+        <div class="form-group">
+          <label for="dateNeeded">Date New Family is Needed:</label>
+          <input type="date" class="form-control" id="dateNeeded" required>
+        </div>
+        <button type="submit" class="btn-primary">Submit</button>
+      </form>
+
+      <table id="adoptionTable" class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Description</th>
+            <th>Reason for Adoption</th>
+            <th>Date Needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Buddy</td>
+            <td>3</td>
+            <td>Very friendly and playful</td>
+            <td>Owner moving to a new home, wont allow dogs</td>
+            <td>07-15-23</td>
+          </tr>
+          <tr>
+            <td>Luna</td>
+            <td>11 months</td>
+            <td>Loves going on long walks, loves children</td>
+            <td>Allergic family member</td>
+            <td>06-30-23</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="image-container">
+      <img src="https://tse3.explicit.bing.net/th?id=OIP.eaP-s9C1VkvoPStToNDauwHaGH&pid=Api&P=0&h=180" alt="Pitbull 3">
+      <img src="https://tse3.mm.bing.net/th?id=OIP.vMhrQYV-Gk068rRRoAyMOgHaHY&pid=Api&P=0&h=180" alt="Pitbull 4">
+    </div>
+  </div>
+
+  <script>
+    // Add event to form submission
+    document.getElementById('adoptionForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      // get form info
+      var name = document.getElementById('name').value;
+      var age = document.getElementById('age').value;
+      var description = document.getElementById('description').value;
+      var reason = document.getElementById('reason').value;
+      var dateNeeded = document.getElementById('dateNeeded').value;
+
+      // Create new info in table rows
+      var newRow = document.createElement('tr');
+      newRow.innerHTML = '<td>' + name + '</td>' +
+                         '<td>' + age + '</td>' +
+                         '<td>' + description + '</td>' +
+                         '<td>' + reason + '</td>' +
+                         '<td>' + dateNeeded + '</td>';
+
+      // Add the new row to the table
+      document.getElementById('adoptionTable').getElementsByTagName('tbody')[0].appendChild(newRow);
+
+      // Reset the form
+      document.getElementById('adoptionForm').reset();
+    });
+  </script>
+
+</body>
+</html>
